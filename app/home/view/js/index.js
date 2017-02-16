@@ -1,1 +1,1 @@
-console.log('我是js文件')
+console.log('this is js文件')

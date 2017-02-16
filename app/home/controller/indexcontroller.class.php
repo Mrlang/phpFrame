@@ -1,6 +1,7 @@
 <?php
 class indexController extends conF{
 	public function index(){
+		$test = 'this variable test';
 		$this->display();
 	}
 	public function lalala(){

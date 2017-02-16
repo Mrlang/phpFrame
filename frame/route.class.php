@@ -34,11 +34,9 @@ class route{
 	}
 
 	private function get_conf(){
-		// echo $this->module.$this->controller.$this->action;
 		unset($this->request_config['m']);   //利用unset删除这个元素
 		unset($this->request_config['a']);
 		unset($this->request_config['c']);
-		//这时的request_conf数组就只剩下action的参数了
 	}
 
 	private function run(){
@@ -46,10 +44,10 @@ class route{
 		if(file_exists($path)){
 			require_once($path);
 			$controller = $this->controller."Controller";
-				//拼接controller名字符串
-			$action = $this->action;          //凭借方法名字符串
+			$action = $this->action;
 			$tempObj = new $controller();
-			call_user_func_array(array($tempObj, $action), $this->request_config);//将参数数组给调用函数
+			$test = 'this variable test';
+			call_user_func_array(array($tempObj, $action), $this->request_config);//第一个数组指明要调用的方法，第二个数组为被调方法需要的所有参数
 		}else{
 			throw new Exception("没有对应控制器", 1);
 

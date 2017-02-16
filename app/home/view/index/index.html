@@ -5,9 +5,12 @@
 	<title>Document</title>
 </head>
 <body>
+
 	<each i = 0;i < 2;i++>
 		<div style="width: 100px; height: 100px;background: red;">helo</div>
 	</each>
-	<script src="app/home/view/js/index.js"></script>
+	<p>$test is {$test}</p>
+	<script src="./app/home/view/js/index.js"></script>
+	<!-- 引入的js还得要相对于index.php的相对路径 ,用<script src=""></script>的形式才会被正则匹配到    -->
 </body>
 </html>
